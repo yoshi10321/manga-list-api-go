@@ -32,7 +32,11 @@ func main() {
 		return
 	}
 
-	fmt.Println("success")
+	err = m.Up()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-	m.Up()
+	fmt.Println("success")
 }
