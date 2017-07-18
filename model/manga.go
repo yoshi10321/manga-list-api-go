@@ -1,11 +1,13 @@
 package model
 
-import "github.com/jinzhu/gorm"
+import "time"
 
-// Manga is define of manga object
+// Manga is define of manga object for gorm
 type Manga struct {
-	gorm.Model
-	Title  string `json:"title"`
-	ImgURL string `json:"img_url"`
-	Number int    `json:"number"`
+	ID        uint      `json:"id" gorm:"primary_key"`
+	Title     string    `json:"title"`
+	ImgURL    string    `json:"img"`
+	Number    int       `json:"readNumber"`
+	CreatedAt time.Time `json:"createdAt"`
+	UpdatedAt time.Time `json:"updatedAt"`
 }

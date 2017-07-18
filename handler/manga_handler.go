@@ -63,9 +63,17 @@ func (handler MangaHandler) UpdateMangaItem(c echo.Context) (err error) {
 		return err
 	}
 
-	manga.Title = request.Title
-	manga.ImgURL = request.ImgURL
-	manga.Number = request.Number
+	if request.Title != "" {
+		manga.Title = request.Title
+	}
+
+	if request.ImgURL != "" {
+		manga.ImgURL = request.ImgURL
+	}
+
+	if request.Number != 0 {
+		manga.Number = request.Number
+	}
 
 	handler.mangaRepo.Update(manga)
 
