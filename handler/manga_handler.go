@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 	"strconv"
 
@@ -23,7 +24,8 @@ func NewMangaHandler(mangaRepo model.MangaRepoInterface) MangaHandler {
 func (handler MangaHandler) GetMangaList(c echo.Context) (err error) {
 	mangaList, err := handler.mangaRepo.FindAll()
 	if err != nil {
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 
 	return c.JSON(http.StatusOK, mangaList)
@@ -32,11 +34,13 @@ func (handler MangaHandler) GetMangaList(c echo.Context) (err error) {
 func (handler MangaHandler) AddMangaItem(c echo.Context) (err error) {
 	request := new(req.MangaCreate)
 	if err = c.Bind(request); err != nil {
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 	err = handler.mangaRepo.Insert(request.Title, request.ImgURL)
 	if err != nil {
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 
 	return nil
@@ -45,22 +49,19 @@ func (handler MangaHandler) AddMangaItem(c echo.Context) (err error) {
 func (handler MangaHandler) UpdateMangaItem(c echo.Context) (err error) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		e := echo.New()
-		e.Logger.Fatal(err)
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 
 	request := new(req.MangaUpdate)
 	if err = c.Bind(request); err != nil {
-		e := echo.New()
-		e.Logger.Fatal(err)
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 	manga, err := handler.mangaRepo.Find(id)
 	if err != nil {
-		e := echo.New()
-		e.Logger.Fatal(err)
-		return err
+		log.Printf("error: %v", err)
+		return
 	}
 
 	if request.Title != "" {
