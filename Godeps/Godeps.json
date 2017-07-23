@@ -4,9 +4,43 @@
 	"GodepVersion": "v74",
 	"Deps": [
 		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.0.0-20-ga539ee1",
+			"Rev": "a539ee1a749a2b895533f979515ac7e6e0f5b650"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.3",
+			"Rev": "a0583e0143b1624142adab07e0e97fe106d99561"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.0-160-g2a14638",
+			"Rev": "2a1463811ee1dc85d168fd639a2d4251d030e6e5"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm/dialects/mysql",
+			"Comment": "v1.0-160-g2a14638",
+			"Rev": "2a1463811ee1dc85d168fd639a2d4251d030e6e5"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "1c35d901db3da928c72a72d8458480cc9ade058f"
+		},
+		{
 			"ImportPath": "github.com/labstack/echo",
 			"Comment": "v3.2.1-11-gd79c131",
 			"Rev": "d79c13108c62b80d3dfa550bfe94ade4290b2bc8"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo/middleware",
+			"Comment": "v3.2.1-11-gd79c131",
+			"Rev": "d79c13108c62b80d3dfa550bfe94ade4290b2bc8"
+		},
+		{
+			"ImportPath": "github.com/labstack/gommon/bytes",
+			"Comment": "v0.2.1-1-gbf40841",
+			"Rev": "bf40841f7287bd5503a5ba2806e8dbf654716e59"
 		},
 		{
 			"ImportPath": "github.com/labstack/gommon/color",
@@ -15,6 +49,11 @@
 		},
 		{
 			"ImportPath": "github.com/labstack/gommon/log",
+			"Comment": "v0.2.1-1-gbf40841",
+			"Rev": "bf40841f7287bd5503a5ba2806e8dbf654716e59"
+		},
+		{
+			"ImportPath": "github.com/labstack/gommon/random",
 			"Comment": "v0.2.1-1-gbf40841",
 			"Rev": "bf40841f7287bd5503a5ba2806e8dbf654716e59"
 		},
